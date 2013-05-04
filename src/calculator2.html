@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+
+<!-- 
+filename: calculator2.html
+usage:    client page of task 2, step 1 and 2
+author:   Yanhe Liu (014126284)
+          yanhe.liu@cs.helsinki.fi
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Mixed calculator</title>
+  </head>
+
+  <body onLoad="show_history('calc2')">
+    <nav>
+      <a href="index.html">Main page</a>
+      <a href="calculator1.html">Basic calculator</a>
+      <a href="plot.html">Plotter</a>
+    </nav>
+
+    <h1>Mixed calculator</h1>
+    <hr>
+    
+    <div id="inputDiv">
+      <h3>Your input:</h3>
+      <p>note 1: the space(s) between numbers will be removed automatically. 
+      For example, '12 3 + 1' is the same as '123 + 1'. </p>
+      <p>note 2: if you wish to enter a negative number here, please use parenthesis 
+      to indicate it. For example, '(-1) + 2' and '1 + (-1)' are both OK, 
+      but '-1 + 2' or '1 + -2' will be considered as invalid inputs</p>
+      <p>note 3: you can mix float numbers, but do not use it like '.01', 
+        instead, use a completed format like '0.01'.</p>
+      <p>
+        <input type="text" id="arg" name="arg" style="width: 300px;"/>
+        <input type="button" onclick="make_request_wrap2()" value="Submit"/>
+      </p>
+    </div>
+
+    <div id="resultDiv">
+      <h3>Result:</h3>
+      <table id="resultTable">
+        <tbody id="resultBody">
+          <tr>
+            <td>Your result will be shown here after submiting.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="historyDiv">
+      <h3>Calculating history:</h3>
+      <table id="historyTable">
+        <tbody id="historyBody">
+        </tbody>
+      </table>
+    </div>
+
+    <script type='text/javascript' src='func_lib.js'></script>
+    <script type='text/javascript' src='calculator2.js'></script>
+  </body>
+</html>

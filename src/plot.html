@@ -1,0 +1,68 @@
+ <!DOCTYPE HTML>
+
+<!-- 
+filename: plot.html
+usage:    client page for task 2, step 3
+author:   Yanhe Liu (014126284)
+          yanhe.liu@cs.helsinki.fi
+-->
+
+ <html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Plotter</title>
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html">Main page</a>
+      <a href="calculator1.html">Basic calculator</a>
+      <a href="calculator2.html">Mixed calculator</a>
+    </nav>
+
+    <h1>Simple plotter</h1>
+    <hr>
+    
+    <div id="inputDiv">
+      <p><b>Please choose one function:</b></p>
+      <form>
+        <select id="func" name="func">
+          <option value="sin">sin(x)</option>
+          <option value="cos">cos(x)</option>
+        </select>
+      </form>
+      <p><b>Please choose your type of plotting:</b></p>
+      <form>
+        <p>
+          <input type="button" onclick="remote_plot()" value="plot by server"/>
+          <input type="button" onclick="local_plot()" value="plot locally"/>
+          <input type="button" onclick="mixed_plot()" value="mixed"/>
+        </p>
+        <p>
+          Order of Taylor Series used by mixed plotting (default value is 6):
+          <select id="order" name="order">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6" selected="selected">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </p>
+      </form>
+    </div>
+
+    <div id="resultDiv">
+      <p><b>Image output:</b></p>
+      <p id="responseDiv">
+        Your image will be shown here after calculating. If you choose 
+        mixed plotting, you need to wait maybe more than 10 minutes.
+      </p>
+      <canvas id="plot" width="640" height="480"></canvas>
+    </div>
+
+
+    <script type='text/javascript' src='func_lib.js'></script>
+    <script type='text/javascript' src='plot.js'></script>
+  </body>
+</html>
